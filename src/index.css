@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  transition:
+    background-color 0.5s,
+    color 0.5s;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden !important;
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.scroll-animation {
+  animation: scroll 20s linear infinite;
+}
+
+.slick-dots li.slick-active div {
+  background-color: #3eb1f1 !important; /* Active dot color */
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.relative .top {
+  animation: move-top 1.5s ease-in-out infinite;
+}
+
+.relative .left {
+  animation: move-left 1.5s ease-in-out infinite;
+}
+
+@keyframes move-top {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move-left {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(70px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.card {
+  background: linear-gradient(145deg, #d9c7d2, #968d93);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card p {
+  font-style: italic;
+  color: #4a5568;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-weight: bold;
+  color: #2d3748;
+}
+
+.card::before {
+  content: open-quote;
+  font-size: 3rem;
+  color: #3182ce;
+  position: absolute;
+  top: -20px;
+  left: 20px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.2s ease-out forwards;
+}
+
+.slick-current .slick-slide-content {
+  box-shadow: 4px 4px 44px 0px #0000001f;
+}
+
+/* Custom styles for the carousel */
+:global(.slick-slide) {
+  opacity: 0.5;
+  transform: scale(0.85);
+  transition: all 0.3s ease;
+}
+
+:global(.slick-center) {
+  opacity: 1;
+  transform: scale(1);
+}
+
+:global(.slick-dots) {
+  display: flex !important;
+}
+
+:global(.custom-dot) {
+  display: block;
+}
